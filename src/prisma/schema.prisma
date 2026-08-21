@@ -1,0 +1,71 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int       @id @default(autoincrement())
+  email    String    @unique
+  password String
+  role     String    @default("ALUNO")
+  workouts Workout[]
+}
+
+model Workout {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  userId      Int // Esta é a chave estrangeira
+  createdAt   DateTime @default(now())
+
+  // Adicione esta linha para completar a relação com User
+  user User @relation(fields: [userId], references: [id])
+
+  // Relação: Um treino pode ter vários exercícios
+  exercises Exercise[]
+}
+
+// Esta tabela será a "Biblioteca" com os 50+ exercícios
+model ExerciseLibrary {
+  id           Int        @id @default(autoincrement())
+  name         String
+  muscleGroup  String     // Ex: "Ombro", "Pernas", "Peito"
+  subGroup     String?    // Ex: "Deltoide Anterior", "Quadríceps"
+  instructions String?
+  videoUrl     String?
+  createdAt    DateTime   @default(now())
+
+  // (Relação inversa com o model Exercise)
+  exercises    Exercise[] 
+}
+
+model Exercise {
+  id              Int          @id @default(autoincrement())
+  name            String
+  sets            Int
+  reps            Int
+  weight          Float        @default(0) // Adicionamos este valor padrão
+  durationSeconds Int?
+  mediaUrl        String?
+  workoutId       Int
+  workout         Workout      @relation(fields: [workoutId], references: [id], onDelete: Cascade)
+  muscleGroupId   Int?
+  muscleGroup     MuscleGroup? @relation(fields: [muscleGroupId], references: [id])
+
+//Relacionando as tabelas
+  libraryId       Int?
+  library         ExerciseLibrary? @relation(fields: [libraryId], references: [id])
+}
+
+// Adicionamos MuscleGroup para categorizar os exercícios
+model MuscleGroup {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique // Ex: "Peito", "Costas"
+  exercises Exercise[]
+}
+
