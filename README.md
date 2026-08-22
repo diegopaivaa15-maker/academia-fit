@@ -7,6 +7,7 @@
 ## 📸 Demonstração do Projeto
 
 > *Dica: Arraste o print da sua tela do Dashboard para cá para ilustrar o projeto.*
+<img width="1366" height="589" alt="image" src="https://github.com/user-attachments/assets/73ea91b6-edee-4702-a694-a5b1b30ebc7d" />
 
 ![Dashboard Cronos Fitness](./print-app.png)
 
