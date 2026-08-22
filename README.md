@@ -5,9 +5,10 @@
 ---
 
 ## 📸 Demonstração do Projeto
-
-> *Dica: Arraste o print da sua tela do Dashboard para cá para ilustrar o projeto.*
 <img width="1366" height="589" alt="image" src="https://github.com/user-attachments/assets/73ea91b6-edee-4702-a694-a5b1b30ebc7d" />
+<img width="1342" height="597" alt="02" src="https://github.com/user-attachments/assets/56ecc7f2-4ef2-4d8f-87f8-06bf94b3ff49" />
+<img width="1342" height="596" alt="03" src="https://github.com/user-attachments/assets/fb6368ff-ec64-45ea-b796-2a6a5f39b97b" />
+<img width="1346" height="604" alt="04" src="https://github.com/user-attachments/assets/6e960200-c393-4dc3-b31a-68038a2d2c6b" />
 
 ![Dashboard Cronos Fitness](./print-app.png)
 
