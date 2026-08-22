@@ -17,21 +17,21 @@
 O projeto foi planejado e desenvolvido aplicando conceitos sólidos de desenvolvimento fullstack, separação de responsabilidades (SoC) e fluxos de dados reativos:
 
 ### 1. Camada de Frontend (Interface & Reatividade)
-* **React 18 & TypeScript:** Construção baseada em componentes reutilizáveis, garantindo tipagem estática rigorosa para payloads de treinos, usuários e exercicios, eliminando erros em tempo de execução.
+* **React 18 & TypeScript:** Construção baseada em componentes reutilizáveis, garantindo tipagem estática rigorosa para payloads de treinos, usuários e exercícios, eliminando erros em tempo de execução.
 * **Gerenciamento de Estado Reativo:** Hooks avançados do React (`useState`, `useEffect`, `useCallback`) para renderização otimizada em tempo real da dashboard do aluno e alteração de fichas diárias.
 * **Design System com Tailwind CSS:** Interface totalmente responsiva construída sob o conceito *Mobile-First*, garantindo usabilidade fluida tanto em smartphones quanto em desktops.
-* **Roteamento Protegido:** Uso do *React Router DOM* para gerenciamento de sessões e rotas restritas (fluxo de autenticação, painel principal e área de edição de treinos).
+* **Roteamento Protegido:** Uso do *React Router DOM* para gerenciamento de sessões e rotas restritas.
 
-### 2. Camada de Backend & Banco de Dados (Persistência & Regras de Negócio)
+### 2. Camada de Backend & Servidor (API & Regras de Negócio)
+* **Node.js & Express:** 
+  * Desenvolvimento de um servidor robusto e assíncrono para gerenciar as rotas de API RESTful.
+  * Estruturação de controladores, middlewares e lógica de backend voltados para o processamento de regras de treino e validação de requisições do cliente.
 * **Banco de Dados Relacional (MySQL):** 
   * Modelagem de dados relacional normalizada para garantir integridade referencial estrita.
-  * Estruturação de tabelas dedicadas para **Usuários**, **Fichas Semanais** e **Exercícios**, assegurando que o histórico de cargas e evoluções dos alunos seja persistido de forma segura.
-* **API RESTful:** 
-  * Arquitetura de servidor estruturada para processar requisições HTTP assíncronas (GET, POST, PUT, DELETE).
-  * Controladores e serviços voltados para o processamento de regras de treino e validação de dados recebidos do cliente.
+  * Estruturação de tabelas dedicadas para **Usuários**, **Fichas Semanais** e **Exercícios**, assegurando que o histórico de cargas e evoluções dos alunos seja persistido de forma segura via SQL.
 
 ### 3. Integração com APIs Nativas do Dispositivo
-* **FileReader API & Input Nativo:** Implementação de seletores de arquivos no ecossistema web que se comunicam diretamente com a memória interna de computadores e a galeria de fotos de smartphones, permitindo o upload, conversão em buffer/base64 e renderização instantânea de imagens de perfil do usuário.
+* **FileReader API & Input Nativo:** Implementação de seletores de arquivos no ecossistema web que se comunicam diretamente com a memória interna de computadores e a galeria de fotos de smartphones, permitindo o upload, conversão e renderização instantânea de imagens de perfil do usuário.
 
 ---
 ## 🚀 Funcionalidades Principais
